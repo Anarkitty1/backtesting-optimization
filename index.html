@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backtesting Dashboard</title>
+<script src="https://cdn.jstdeliver.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>Trading Strategy Parameter Input</h1>
+<form id="parameter-form">
+<label for="strategy">Select Strategy/Indicator:</label>
+<select id="strategy" name="strategy">
+<!-- Options for strategies/indicators -->
+</select>
+<br/>
+<Label for="trading-pair">Trading Pair:</label>
+<select id="trading-pair" name="trading-pair">
+<//select>
+<br/>
+<label for="time-frame">Time Frame:</label>
+<div id="time-frame">
+<input type="checkbox" name="time-frame" value="1min">1min
+<input type="checkbox" name="time-frame" value="5min">5min
+<//div>
+<div id="parameters">
+</div>
+<br>
+<button type="button" id="add-parameter">Add Parameter</button>
+<br>
+<button type="button" id="remove-parameter">Remove Parameter</button>
+<br>
+<button type="button" id="save-preset">Save Preset</button>
+<button type="button" id="load-preset">Load Preset</button>
+<button type="submit">Submit</button>
+</form>
+</div>
+<div class="container">
+<h1>Backtesting Dashboard</h1>
+<div class="filters">
+<label for="sort-by">Sort By:</label>
+<select id="sort-by">
+<option value="profitability">Profitability</option>
+<option value="drawdown">Drawdown</option>
+<option value="sharpe_ratio">Sharpe Ratio</option>
+<option value="win_rate">Win Rate</option>
+</select>
+<button id="download-report">Download Report</button>
+</div>
+<div class="results">
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Profitability</th>
+<th>Drawdown</th>
+<th>Sharpe Ratio</th>
+<th>Win Rate</th>
+</tr>
+</thead>
+<tbody id="results-table">
+    <!-- Results will be populated here -->
+</tbody>
+</table>
+</div>
+<div class="charts">
+<canvas id="performance-chart"></canvas>
+</div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
